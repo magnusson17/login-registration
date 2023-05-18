@@ -50,16 +50,16 @@ class Signup extends DbClass {
             /* se fallisce mando un errore a index.php */
             header("location: ../index.php?error=stmtfailed");
             exit();
-
-            $resultCheck;
-
-            /* rowCount() verifica quante row sono ritornate dallo statement */
-            if($statement->rowCount() > 0) {
-                $resultCheck = false;
-            } else {
-                $resultCheck = true;
-            }
-            return $resultCheck;
         }
+
+        $resultCheck;
+
+        /* rowCount() verifica quante row sono ritornate dallo statement */
+        if($statement->rowCount() > 0) {
+            $resultCheck = false;
+        } else {
+            $resultCheck = true;
+        }
+        return $resultCheck;
     }
 }
