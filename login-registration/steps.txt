@@ -1,0 +1,19 @@
+*** ordine DI CREAZIONE ***
+
+1 - index
+
+2 - signup-include.php
+
+3 - signup-controller-class.php
+
+4 - db-class.php
+
+5 - signup-class.php
+
+
+*** ordine LOGICO ***
+
+SignupController extends Signup per usare i methods protected di Signup 
+il quale a sua volta estende DbClass per poter usare i suoi method protected
+
+index -> signup-include -> signup-controller-class -> signup-class -> db-class
