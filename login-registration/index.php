@@ -1,3 +1,5 @@
+<!-- in OGNI pag del mio website devo avere una session che runna 
+altrimenti non posso vedere ciò di cui ho bisogno quando l'user si logga -->
 <?php session_start(); ?>
 
 <!DOCTYPE html>
