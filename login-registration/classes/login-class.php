@@ -6,7 +6,7 @@ class Login extends DbClass {
 
         $statement = $this->connect()->prepare('SELECT users_pass FROM users WHERE users_user = ? OR users_mail = ?;');
 
-        if(!$statement->execute(array($user, $mail))) {
+        if(!$statement->execute(array($user, $pass))) {
             $statement = null;
             header("location: ../index.php?error=stmtfailed");
             exit();
@@ -46,7 +46,7 @@ class Login extends DbClass {
         
         */
 
-        $passHashed = $statement->fetchAll(PDO:FETCH_ASSOC);
+        $passHashed = $statement->fetchAll(PDO::FETCH_ASSOC);
         $checkPass = password_verify($pass, $passHashed[0]["users_pass"]);
 
         if($checkPass == false) {
@@ -78,7 +78,7 @@ class Login extends DbClass {
                 exit();
             }
 
-            $userLogged = $statement->fetchAll(PDO:FETCH_ASSOC);
+            $userLogged = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             session_start();
             $_SESSION["userid"]     = $userLogged[0]["users_id"];
