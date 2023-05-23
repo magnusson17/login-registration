@@ -18,7 +18,7 @@ class LoginController extends Login {
         }
 
         /* getUser() method creato in login-class.php */
-        $this->getUser($this->user, $this->pass, $this->mail);   
+        $this->getUser($this->user, $this->pass);   
     }
 
     // controllo INPUT
